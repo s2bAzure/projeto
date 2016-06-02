@@ -1,0 +1,8 @@
+sudo apt-get install php5 apache2 sqlite3 php5-sqlite git-core
+sudo service apache2 restart
+git clone https://github.com/s2bAzure/projeto.git
+sudo ln -s /home/USUARIO/projeto/ /var/www/html/
+cd projeto
+sudo chmod 777 uploads
+sqlite3 provas.db .tables
+chmod 777 provas.db
