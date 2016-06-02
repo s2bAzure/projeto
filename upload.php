@@ -18,9 +18,10 @@ if(isset($_POST["submit"])) {
     }
     */
 }
+
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Um arquivo com esse nome já existe. Por favor renomeie o arquivo e tente novamente.";
+    echo "Um arquivo com esse nome ja existe. Por favor renomeie o arquivo e tente novamente.";
     $uploadOk = 0;
 }
 // Check file size
@@ -36,7 +37,7 @@ if($fileExtension != "JPG" && $fileExtension != "PNG" && $fileExtension != "JPEG
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Ocorreu um erro e infelizmente seu arquivo não foi enviado.";
+    echo "Ocorreu um erro e infelizmente seu arquivo nao foi enviado.";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
