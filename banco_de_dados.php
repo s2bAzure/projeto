@@ -5,7 +5,7 @@ try
 	$db = new PDO('sqlite:dogsDb_PDO.sqlite');
 
 	//create the table
-	$db->exec("CREATE TABLE Dogs (Id INTEGER PRIMARY KEY, Breed TEXT, Name TEXT, Age INTEGER)");   
+	$db->exec("CREATE TABLE Dogs (Id INTEGER PRIMARY KEY, Breed TEXT, Name TEXT, Age INTEGER)");
 
 	//insert some data...
 	$db->exec("INSERT INTO Dogs (Breed, Name, Age) VALUES ('Labrador', 'Tank', 2);".
