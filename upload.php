@@ -5,20 +5,6 @@ $uploadOk = 1;
 $fileExtension = pathinfo($target_file,PATHINFO_EXTENSION);
 $fileExtension = strtoupper($fileExtension);
 
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    /*
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-    */
-}
-
 // Check if file already exists
 if (file_exists($target_file)) {
     echo "Um arquivo com esse nome ja existe. Por favor renomeie o arquivo e tente novamente.";
@@ -42,6 +28,23 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "O arquivo  ". basename( $_FILES["fileToUpload"]["name"]). " foi enviado.";
+
+
+
+        try {
+            //Arquivo no mesmo diretorio que o arquivo PHP e com permissao 777
+            $db = new PDO('sqlite:provas.db');
+            $result = $db->query("INSERT INTO PROVAS ();");
+
+            //$stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
+            //$stmt->execute(array('name' => $name));
+        }
+        catch(PDOException $e) {
+            print 'Exception : '.$e->getMessage();
+        }
+
+
+
     } else {
         echo "Ocorreu um erro e infelizmente seu arquivo não foi enviado.";
     }
