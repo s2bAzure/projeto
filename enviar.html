@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
 <body>
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Selecione um arquivo:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Enviar" name="submit">
-</form>
-
+<div class="container">
+  <form role="form" action="upload.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="instituicao">Instituição:</label>
+      <input type="text" class="form-control" name="instituicao" id="instituicao" placeholder="UFRGS, PUC, ..." required>
+    </div>
+    <div class="form-group">
+      <label for="disciplina">Disciplina:</label>
+      <input type="text" class="form-control" name="disciplina" id="disciplina" placeholder="Algoritmos, Banco de dados, ..." required>
+    </div>
+    <div class="form-group">
+      <label for="ano">Ano:</label>
+      <input type="number" min="2010" max="2016" class="form-control" name="ano" id="ano" placeholder="2010 a 2016" required>
+    </div>
+    <div class="form-group">
+      <label for="semestre">Semestre:</label>
+      <input type="number" min="1" max="2" class="form-control" name="semestre" id="semestre" placeholder="1o ou 2o" required>
+    </div>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome que será exibido" required>
+    </div>
+    <div class="form-group">
+      <label for="fileToUpload">Selecione um arquivo:</label>
+      <input type="file" class="form-control" name="fileToUpload" id="fileToUpload" required>
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
+  </form>
+</div>
 </body>
 </html>
