@@ -32,7 +32,8 @@ try {
 // Disciplina TEXT,
 // Ano INTEGER,
 // Semestre INTEGER,
-// Usuario TEXT
+// Usuario TEXT,
+// NomeArquivo TEXT
 // );
 //
 // insert into Provas
@@ -59,6 +60,7 @@ try {
         <td><?php echo $row["Ano"]?></td>
         <td><?php echo $row["Semestre"]?></td>
         <td><?php echo $row["Usuario"]?></td>
+        <td><a href="<?php echo $row["NomeArquivo"]?>">Ver</a></td>
       </tr>
 <?php
       }
