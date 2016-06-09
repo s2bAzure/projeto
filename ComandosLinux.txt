@@ -1,3 +1,4 @@
+sudo apt-get update
 sudo apt-get install php5 apache2 sqlite3 php5-sqlite git-core
 sudo service apache2 restart
 git clone https://github.com/s2bAzure/projeto.git
